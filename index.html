@@ -1,46 +1,9 @@
-<?php
-$platform_name = "Justice Connect";
-$current_year = date('Y');
-
-$stats = [
-    ['value' => 174000, 'label' => 'Children go missing every year in India'],
-    ['value' => 365, 'label' => 'Days families wait without answers'],
-    ['value' => 500, 'label' => 'Average cases handled by one officer'],
-    ['value' => null, 'label' => 'Scattered data points that could help']
-];
-
-$stories = [
-    [
-        'icon' => '💔',
-        'title' => 'The Waiting Parent',
-        'desc' => 'Every morning begins with hope. Every night ends with fear. Somewhere, a small piece of information exists — but it is buried, disconnected, and unreachable.'
-    ],
-    [
-        'icon' => '👮',
-        'title' => 'The Overloaded Officer',
-        'desc' => 'Hundreds of cases. Limited time. No unified digital support. The answers may exist — but finding them manually costs days that victims don’t have.'
-    ]
-];
-
-$solutions = [
-    ['n'=>'01','t'=>'Bring Order','d'=>'We organize already publicly circulating breach intelligence into a form investigators can actually use.'],
-    ['n'=>'02','t'=>'Reveal Links','d'=>'Phone numbers, addresses, vehicles — when viewed together, patterns emerge.'],
-    ['n'=>'03','t'=>'Support Action','d'=>'We provide intelligence support. Officers investigate. Human judgment remains central.']
-];
-
-$benefits = [
-    ['i'=>'⏱️','t'=>'Faster Leads','d'=>'Hours instead of days'],
-    ['i'=>'🎯','t'=>'Focused Effort','d'=>'Less noise, better direction'],
-    ['i'=>'👥','t'=>'Same Manpower','d'=>'Stronger outcomes'],
-    ['i'=>'🛡️','t'=>'Ethical Use','d'=>'Only for law enforcement']
-];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php echo $platform_name; ?> — Every Second Counts</title>
+<title>Justice Connect — Every Second Counts</title>
 
 <style>
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto;color:#111827}
@@ -62,8 +25,6 @@ h1{font-size:3rem;margin-bottom:20px}
 .circle{width:90px;height:90px;border-radius:50%;background:#2563eb;color:white;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700}
 .benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin-top:60px}
 .benefit{background:rgba(255,255,255,.08);padding:35px;border-radius:18px}
-.cta{background:#020617;color:white;text-align:center}
-.btn{display:inline-block;margin-top:40px;background:#2563eb;color:white;padding:20px 50px;border-radius:50px;font-size:1.3rem;text-decoration:none}
 footer{background:#020617;color:#9ca3af;text-align:center;padding:50px 20px}
 @media(max-width:768px){.story{grid-template-columns:1fr}h1{font-size:2.2rem}}
 </style>
@@ -75,7 +36,10 @@ footer{background:#020617;color:#9ca3af;text-align:center;padding:50px 20px}
 <div class="container">
 <div class="timer" id="timer">00:00:00</div>
 <h1>Every Second a Child Waits</h1>
-<p class="subtitle">Somewhere, the information already exists.<br>It is just not connected.</p>
+<p class="subtitle">
+Somewhere, the information already exists.<br>
+It is just not connected.
+</p>
 </div>
 </section>
 
@@ -83,15 +47,27 @@ footer{background:#020617;color:#9ca3af;text-align:center;padding:50px 20px}
 <div class="container center">
 <h2>The Reality</h2>
 <p class="gray">These are not statistics. They are lives.</p>
+
 <div class="stats">
-<?php foreach ($stats as $s): ?>
 <div class="card">
-<div class="num" data-target="<?php echo is_numeric($s['value']) ? $s['value'] : ''; ?>">
-<?php echo $s['value'] === null ? '∞' : '0'; ?>
+<div class="num" data-target="174000">0</div>
+<p>Children go missing every year in India</p>
 </div>
-<p><?php echo $s['label']; ?></p>
+
+<div class="card">
+<div class="num" data-target="365">0</div>
+<p>Days families wait without answers</p>
 </div>
-<?php endforeach; ?>
+
+<div class="card">
+<div class="num" data-target="500">0</div>
+<p>Average cases handled by one officer</p>
+</div>
+
+<div class="card">
+<div class="num">∞</div>
+<p>Scattered data points that could help</p>
+</div>
 </div>
 </div>
 </section>
@@ -100,12 +76,25 @@ footer{background:#020617;color:#9ca3af;text-align:center;padding:50px 20px}
 <div class="container">
 <h2 class="center">Behind Every Case</h2>
 <div class="story">
-<?php foreach ($stories as $st): ?>
+
 <div class="story-box">
-<h3><?php echo $st['icon'].' '.$st['title']; ?></h3>
-<p><?php echo $st['desc']; ?></p>
+<h3>💔 The Waiting Parent</h3>
+<p>
+Every morning begins with hope. Every night ends with fear.
+Somewhere, a small piece of information exists — but it is buried,
+disconnected, and unreachable.
+</p>
 </div>
-<?php endforeach; ?>
+
+<div class="story-box">
+<h3>👮 The Overloaded Officer</h3>
+<p>
+Hundreds of cases. Limited time. No unified digital support.
+The answers may exist — but finding them manually costs days
+that victims don’t have.
+</p>
+</div>
+
 </div>
 </div>
 </section>
@@ -113,49 +102,82 @@ footer{background:#020617;color:#9ca3af;text-align:center;padding:50px 20px}
 <section>
 <div class="container">
 <h2 class="center">How We Help</h2>
+
 <div class="steps">
-<?php foreach ($solutions as $sol): ?>
 <div class="step">
-<div class="circle"><?php echo $sol['n']; ?></div>
+<div class="circle">01</div>
 <div>
-<h3><?php echo $sol['t']; ?></h3>
-<p><?php echo $sol['d']; ?></p>
+<h3>Bring Order</h3>
+<p>We organize publicly circulating intelligence into usable form.</p>
 </div>
 </div>
-<?php endforeach; ?>
+
+<div class="step">
+<div class="circle">02</div>
+<div>
+<h3>Reveal Links</h3>
+<p>Phone numbers, addresses, vehicles — patterns emerge.</p>
 </div>
+</div>
+
+<div class="step">
+<div class="circle">03</div>
+<div>
+<h3>Support Action</h3>
+<p>We support intelligence. Human judgment stays central.</p>
+</div>
+</div>
+</div>
+
 </div>
 </section>
 
 <section style="background:#1e293b;color:white">
 <div class="container">
 <h2 class="center">What This Means for Police</h2>
+
 <div class="benefits">
-<?php foreach ($benefits as $b): ?>
 <div class="benefit center">
-<div style="font-size:3rem"><?php echo $b['i']; ?></div>
-<h3><?php echo $b['t']; ?></h3>
-<p><?php echo $b['d']; ?></p>
+<div style="font-size:3rem">⏱️</div>
+<h3>Faster Leads</h3>
+<p>Hours instead of days</p>
 </div>
-<?php endforeach; ?>
+
+<div class="benefit center">
+<div style="font-size:3rem">🎯</div>
+<h3>Focused Effort</h3>
+<p>Less noise, better direction</p>
 </div>
+
+<div class="benefit center">
+<div style="font-size:3rem">👥</div>
+<h3>Same Manpower</h3>
+<p>Stronger outcomes</p>
+</div>
+
+<div class="benefit center">
+<div style="font-size:3rem">🛡️</div>
+<h3>Ethical Use</h3>
+<p>Only for law enforcement</p>
+</div>
+</div>
+
 </div>
 </section>
 
 <footer>
-<p><?php echo $platform_name; ?></p>
-<p>© <?php echo $current_year; ?></p>
+<p>Justice Connect</p>
+<p>© 2026</p>
 </footer>
 
 <script>
-let timerEl = document.getElementById('timer');
 let s=0;
 setInterval(()=>{
 s++;
 let h=String(Math.floor(s/3600)).padStart(2,'0');
 let m=String(Math.floor(s%3600/60)).padStart(2,'0');
 let se=String(s%60).padStart(2,'0');
-timerEl.textContent=`${h}:${m}:${se}`;
+document.getElementById('timer').textContent=`${h}:${m}:${se}`;
 },1000);
 
 document.querySelectorAll('[data-target]').forEach(el=>{
@@ -164,356 +186,12 @@ if(!t) return;
 let c=0;
 let i=setInterval(()=>{
 c+=Math.ceil(t/60);
-if(c>=t){el.textContent=t.toLocaleString('en-IN');clearInterval(i)}
-else el.textContent=c.toLocaleString('en-IN')
-},30);
-});
-</script>
-
-</body>
-</html>
-<?php
-$platform_name = "Justice Connect";
-$current_year = date('Y');
-
-$stats = [
-    ['value' => 174000, 'label' => 'Children go missing every year in India'],
-    ['value' => 365, 'label' => 'Days families wait without answers'],
-    ['value' => 500, 'label' => 'Average cases handled by one officer'],
-    ['value' => null, 'label' => 'Scattered data points that could help']
-];
-
-$stories = [
-    [
-        'icon' => '💔',
-        'title' => 'The Waiting Parent',
-        'desc' => 'Every morning begins with hope. Every night ends with fear. Somewhere, a small piece of information exists — but it is buried, disconnected, and unreachable.'
-    ],
-    [
-        'icon' => '👮',
-        'title' => 'The Overloaded Officer',
-        'desc' => 'Hundreds of cases. Limited time. No unified digital support. The answers may exist — but finding them manually costs days that victims don’t have.'
-    ]
-];
-
-$solutions = [
-    ['n'=>'01','t'=>'Bring Order','d'=>'We organize already publicly circulating breach intelligence into a form investigators can actually use.'],
-    ['n'=>'02','t'=>'Reveal Links','d'=>'Phone numbers, addresses, vehicles — when viewed together, patterns emerge.'],
-    ['n'=>'03','t'=>'Support Action','d'=>'We provide intelligence support. Officers investigate. Human judgment remains central.']
-];
-
-$benefits = [
-    ['i'=>'⏱️','t'=>'Faster Leads','d'=>'Hours instead of days'],
-    ['i'=>'🎯','t'=>'Focused Effort','d'=>'Less noise, better direction'],
-    ['i'=>'👥','t'=>'Same Manpower','d'=>'Stronger outcomes'],
-    ['i'=>'🛡️','t'=>'Ethical Use','d'=>'Only for law enforcement']
-];
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php echo $platform_name; ?> — Every Second Counts</title>
-
-<style>
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto;color:#111827}
-section{padding:100px 20px}
-.container{max-width:1100px;margin:auto}
-.hero{min-height:100vh;background:linear-gradient(135deg,#0f172a,#1e293b);color:white;display:flex;align-items:center;text-align:center}
-.timer{font-size:4rem;color:#ef4444;font-weight:800;margin-bottom:20px}
-h1{font-size:3rem;margin-bottom:20px}
-.subtitle{font-size:1.4rem;opacity:.9}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin-top:60px}
-.card{background:white;border-radius:18px;padding:35px;box-shadow:0 20px 50px rgba(0,0,0,.1)}
-.num{font-size:3rem;font-weight:800;color:#2563eb}
-.center{text-align:center}
-.gray{color:#6b7280}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:60px}
-.story-box{background:#f8fafc;padding:40px;border-radius:20px}
-.steps{max-width:900px;margin:60px auto}
-.step{display:flex;gap:30px;margin-bottom:50px}
-.circle{width:90px;height:90px;border-radius:50%;background:#2563eb;color:white;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700}
-.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin-top:60px}
-.benefit{background:rgba(255,255,255,.08);padding:35px;border-radius:18px}
-.cta{background:#020617;color:white;text-align:center}
-.btn{display:inline-block;margin-top:40px;background:#2563eb;color:white;padding:20px 50px;border-radius:50px;font-size:1.3rem;text-decoration:none}
-footer{background:#020617;color:#9ca3af;text-align:center;padding:50px 20px}
-@media(max-width:768px){.story{grid-template-columns:1fr}h1{font-size:2.2rem}}
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-<div class="container">
-<div class="timer" id="timer">00:00:00</div>
-<h1>Every Second a Child Waits</h1>
-<p class="subtitle">Somewhere, the information already exists.<br>It is just not connected.</p>
-</div>
-</section>
-
-<section>
-<div class="container center">
-<h2>The Reality</h2>
-<p class="gray">These are not statistics. They are lives.</p>
-<div class="stats">
-<?php foreach ($stats as $s): ?>
-<div class="card">
-<div class="num" data-target="<?php echo is_numeric($s['value']) ? $s['value'] : ''; ?>">
-<?php echo $s['value'] === null ? '∞' : '0'; ?>
-</div>
-<p><?php echo $s['label']; ?></p>
-</div>
-<?php endforeach; ?>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2 class="center">Behind Every Case</h2>
-<div class="story">
-<?php foreach ($stories as $st): ?>
-<div class="story-box">
-<h3><?php echo $st['icon'].' '.$st['title']; ?></h3>
-<p><?php echo $st['desc']; ?></p>
-</div>
-<?php endforeach; ?>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2 class="center">How We Help</h2>
-<div class="steps">
-<?php foreach ($solutions as $sol): ?>
-<div class="step">
-<div class="circle"><?php echo $sol['n']; ?></div>
-<div>
-<h3><?php echo $sol['t']; ?></h3>
-<p><?php echo $sol['d']; ?></p>
-</div>
-</div>
-<?php endforeach; ?>
-</div>
-</div>
-</section>
-
-<section style="background:#1e293b;color:white">
-<div class="container">
-<h2 class="center">What This Means for Police</h2>
-<div class="benefits">
-<?php foreach ($benefits as $b): ?>
-<div class="benefit center">
-<div style="font-size:3rem"><?php echo $b['i']; ?></div>
-<h3><?php echo $b['t']; ?></h3>
-<p><?php echo $b['d']; ?></p>
-</div>
-<?php endforeach; ?>
-</div>
-</div>
-</section>
-
-<footer>
-<p><?php echo $platform_name; ?></p>
-<p>© <?php echo $current_year; ?></p>
-</footer>
-
-<script>
-let timerEl = document.getElementById('timer');
-let s=0;
-setInterval(()=>{
-s++;
-let h=String(Math.floor(s/3600)).padStart(2,'0');
-let m=String(Math.floor(s%3600/60)).padStart(2,'0');
-let se=String(s%60).padStart(2,'0');
-timerEl.textContent=`${h}:${m}:${se}`;
-},1000);
-
-document.querySelectorAll('[data-target]').forEach(el=>{
-let t=parseInt(el.dataset.target);
-if(!t) return;
-let c=0;
-let i=setInterval(()=>{
-c+=Math.ceil(t/60);
-if(c>=t){el.textContent=t.toLocaleString('en-IN');clearInterval(i)}
-else el.textContent=c.toLocaleString('en-IN')
-},30);
-});
-</script>
-
-</body>
-</html>
-<?php
-$platform_name = "Justice Connect";
-$current_year = date('Y');
-
-$stats = [
-    ['value' => 174000, 'label' => 'Children go missing every year in India'],
-    ['value' => 365, 'label' => 'Days families wait without answers'],
-    ['value' => 500, 'label' => 'Average cases handled by one officer'],
-    ['value' => null, 'label' => 'Scattered data points that could help']
-];
-
-$stories = [
-    [
-        'icon' => '💔',
-        'title' => 'The Waiting Parent',
-        'desc' => 'Every morning begins with hope. Every night ends with fear. Somewhere, a small piece of information exists — but it is buried, disconnected, and unreachable.'
-    ],
-    [
-        'icon' => '👮',
-        'title' => 'The Overloaded Officer',
-        'desc' => 'Hundreds of cases. Limited time. No unified digital support. The answers may exist — but finding them manually costs days that victims don’t have.'
-    ]
-];
-
-$solutions = [
-    ['n'=>'01','t'=>'Bring Order','d'=>'We organize already publicly circulating breach intelligence into a form investigators can actually use.'],
-    ['n'=>'02','t'=>'Reveal Links','d'=>'Phone numbers, addresses, vehicles — when viewed together, patterns emerge.'],
-    ['n'=>'03','t'=>'Support Action','d'=>'We provide intelligence support. Officers investigate. Human judgment remains central.']
-];
-
-$benefits = [
-    ['i'=>'⏱️','t'=>'Faster Leads','d'=>'Hours instead of days'],
-    ['i'=>'🎯','t'=>'Focused Effort','d'=>'Less noise, better direction'],
-    ['i'=>'👥','t'=>'Same Manpower','d'=>'Stronger outcomes'],
-    ['i'=>'🛡️','t'=>'Ethical Use','d'=>'Only for law enforcement']
-];
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php echo $platform_name; ?> — Every Second Counts</title>
-
-<style>
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto;color:#111827}
-section{padding:100px 20px}
-.container{max-width:1100px;margin:auto}
-.hero{min-height:100vh;background:linear-gradient(135deg,#0f172a,#1e293b);color:white;display:flex;align-items:center;text-align:center}
-.timer{font-size:4rem;color:#ef4444;font-weight:800;margin-bottom:20px}
-h1{font-size:3rem;margin-bottom:20px}
-.subtitle{font-size:1.4rem;opacity:.9}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin-top:60px}
-.card{background:white;border-radius:18px;padding:35px;box-shadow:0 20px 50px rgba(0,0,0,.1)}
-.num{font-size:3rem;font-weight:800;color:#2563eb}
-.center{text-align:center}
-.gray{color:#6b7280}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:60px}
-.story-box{background:#f8fafc;padding:40px;border-radius:20px}
-.steps{max-width:900px;margin:60px auto}
-.step{display:flex;gap:30px;margin-bottom:50px}
-.circle{width:90px;height:90px;border-radius:50%;background:#2563eb;color:white;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700}
-.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin-top:60px}
-.benefit{background:rgba(255,255,255,.08);padding:35px;border-radius:18px}
-.cta{background:#020617;color:white;text-align:center}
-.btn{display:inline-block;margin-top:40px;background:#2563eb;color:white;padding:20px 50px;border-radius:50px;font-size:1.3rem;text-decoration:none}
-footer{background:#020617;color:#9ca3af;text-align:center;padding:50px 20px}
-@media(max-width:768px){.story{grid-template-columns:1fr}h1{font-size:2.2rem}}
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-<div class="container">
-<div class="timer" id="timer">00:00:00</div>
-<h1>Every Second a Child Waits</h1>
-<p class="subtitle">Somewhere, the information already exists.<br>It is just not connected.</p>
-</div>
-</section>
-
-<section>
-<div class="container center">
-<h2>The Reality</h2>
-<p class="gray">These are not statistics. They are lives.</p>
-<div class="stats">
-<?php foreach ($stats as $s): ?>
-<div class="card">
-<div class="num" data-target="<?php echo is_numeric($s['value']) ? $s['value'] : ''; ?>">
-<?php echo $s['value'] === null ? '∞' : '0'; ?>
-</div>
-<p><?php echo $s['label']; ?></p>
-</div>
-<?php endforeach; ?>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2 class="center">Behind Every Case</h2>
-<div class="story">
-<?php foreach ($stories as $st): ?>
-<div class="story-box">
-<h3><?php echo $st['icon'].' '.$st['title']; ?></h3>
-<p><?php echo $st['desc']; ?></p>
-</div>
-<?php endforeach; ?>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2 class="center">How We Help</h2>
-<div class="steps">
-<?php foreach ($solutions as $sol): ?>
-<div class="step">
-<div class="circle"><?php echo $sol['n']; ?></div>
-<div>
-<h3><?php echo $sol['t']; ?></h3>
-<p><?php echo $sol['d']; ?></p>
-</div>
-</div>
-<?php endforeach; ?>
-</div>
-</div>
-</section>
-
-<section style="background:#1e293b;color:white">
-<div class="container">
-<h2 class="center">What This Means for Police</h2>
-<div class="benefits">
-<?php foreach ($benefits as $b): ?>
-<div class="benefit center">
-<div style="font-size:3rem"><?php echo $b['i']; ?></div>
-<h3><?php echo $b['t']; ?></h3>
-<p><?php echo $b['d']; ?></p>
-</div>
-<?php endforeach; ?>
-</div>
-</div>
-</section>
-
-<footer>
-<p><?php echo $platform_name; ?></p>
-<p>© <?php echo $current_year; ?></p>
-</footer>
-
-<script>
-let timerEl = document.getElementById('timer');
-let s=0;
-setInterval(()=>{
-s++;
-let h=String(Math.floor(s/3600)).padStart(2,'0');
-let m=String(Math.floor(s%3600/60)).padStart(2,'0');
-let se=String(s%60).padStart(2,'0');
-timerEl.textContent=`${h}:${m}:${se}`;
-},1000);
-
-document.querySelectorAll('[data-target]').forEach(el=>{
-let t=parseInt(el.dataset.target);
-if(!t) return;
-let c=0;
-let i=setInterval(()=>{
-c+=Math.ceil(t/60);
-if(c>=t){el.textContent=t.toLocaleString('en-IN');clearInterval(i)}
-else el.textContent=c.toLocaleString('en-IN')
+if(c>=t){
+el.textContent=t.toLocaleString('en-IN');
+clearInterval(i);
+}else{
+el.textContent=c.toLocaleString('en-IN');
+}
 },30);
 });
 </script>
